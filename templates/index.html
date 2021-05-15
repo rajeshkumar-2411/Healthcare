@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetes prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<style>
+body {background-image: url('static/diabetes.jpg');
+height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;}
+form {
+	position: absolute;
+    right: 30px;
+    top:40px;
+	width: 400px;
+	border: 2px solid #e2e0e0;
+	padding: 30px;
+	background: #fffffff0;
+	border-radius: 15px;
+}
+footer{
+position: absolute;
+    left: 5px;
+    bottom:1px;
+	width: 200px;
+	padding: 30px;
+	background: #ffffff00;
+}
+p    {color: #d6d6d6;}
+a   {color: #d6d6d6;}
+</style>
+  
+</head>
+
+<body>
+    
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <center> <h2> Diabetes prediction </h2>
+    	<input type="number" name="Pregnancies" placeholder="No of Pregnancies" required="required" />
+        <input type="number" name="Glucose" placeholder="Glucose" required="required" />
+		<input type="number" name="BloodPressure" placeholder="BloodPressure" required="required" />
+        <input type="number" name="SkinThickness" placeholder="SkinThickness" required="required" />
+        <input type="number" name="Insulin" placeholder="Insulin" required="required" />
+        <input type="nuber" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" required="required" />
+        <input type="number" name="Age" placeholder="Age" required="required" />
+        <input type="number" name="BMI" placeholder="BMI" required="required" />   
+        <button type="button" class="btn btn-primary btn-block btn-large">Calculate</button>
+        <br><br>
+         <h4>{{ prediction_text }}</h4>
+        </center>
+    </form>
+    
+
+<footer>
+  <p>For more info: <a href="mailto:rajessh05@gmail.com">rajessh05@gmail.com</a></p>
+
+</footer>
+</body>
+</html>
