@@ -1,4 +1,4 @@
-﻿bokeh==2.3.2
+bokeh==2.3.2
 brewer2mpl==1.4.1
 certifi==2020.6.20
 chardet==3.0.4
@@ -8,7 +8,6 @@ colorama==0.4.1
 colorlover==0.3.0
 cufflinks==0.17.3
 cycler==0.10.0
-decorator==4.4.0
 flash==1.0.3
 Flask==1.1.2
 matplotlib==3.3.0
@@ -17,8 +16,6 @@ pandas==0.25.3
 pandas-bokeh==0.5.5
 pandocfilters==1.4.2
 plotly==4.14.3
-requests==2.24.0
 scikit-learn==0.23.1
-scipy==1.5.2
 seaborn==0.10.1
 
